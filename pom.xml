@@ -5,8 +5,7 @@
 
     <groupId>com.roll</groupId>
     <artifactId>poseidon</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <version>1.0</version>
 
     <name>poseidon</name>
     <description>Demo project for Spring Boot</description>
@@ -63,15 +62,10 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-
-            <plugin>
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.8.1</version>
                 <configuration>
-                    <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/repository</altDeploymentRepository>
+                    <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/repository/release</altDeploymentRepository>
                 </configuration>
             </plugin>
 
@@ -82,7 +76,7 @@
                 <configuration>
                     <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
                     <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-                    <outputDirectory>${project.build.directory}/repository</outputDirectory> <!-- matches distribution management repository url above -->
+                    <outputDirectory>${project.build.directory}/repository/release</outputDirectory> <!-- matches distribution management repository url above -->
                     <branch>refs/heads/repository</branch>                       <!-- remote branch name -->
                     <includes><include>**/*</include></includes>
                     <repositoryName>poseidon</repositoryName>      <!-- github repo name -->
