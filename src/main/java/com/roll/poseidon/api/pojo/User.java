@@ -13,6 +13,9 @@ public class User implements Serializable {
 	private String name;
 	private Long score;
 
+	public User() {
+	}
+
 	public Long getId() {
 		return id;
 	}
