@@ -17,5 +17,5 @@ public interface UserService {
 	User get(@RequestParam("uid") Long uid);
 
 	@RequestMapping("add")
-	void add(@RequestParam("name") String name, @RequestParam("score") Long score);
+	void add(@RequestParam("uid") Long uid, @RequestParam("name") String name, @RequestParam("score") Long score);
 }
